@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+@import "./styles/resets.css";
+
+:root {
+  --primary: #8b5cf6;
+  --primary-dark: #754cd5;
+  --bg: #f4f3fd;
+  --text: #242433;
+  --danger: #f43f5e;
+}
+
+.dark:root {
+  color-scheme: dark;
+
+  --primary: #a78bfa;
+  --primary-dark: #8b5cf6;
+  --bg: #242433;
+  --text: #f4f3fd;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Fira Sans", sans-serif;
+}
+
+.container {
+  max-width: 700px;
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.toggle-theme {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.todo-form {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.todo-form input {
+  flex: 1;
+
+  background-color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgb(231, 231, 231);
+  outline: none;
+  transition: border-color 300ms, box-shadow 300ms;
+}
+
+.dark .todo-form input {
+  border-color: rgb(37, 37, 37);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.todo-form input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+}
+
+.todo-form button {
+  background-color: var(--primary);
+  padding: 0.5rem 1.5rem;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 300ms;
+}
+
+.todo-form button:hover {
+  background-color: var(--primary-dark);
+}
+
+.todos-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.todo {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: #fbfbfb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark .todo {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-delete {
+  background-color: #f43f5e30;
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.btn-delete:hover {
+  background-color: #f43f5e50;
+}
+
+.todo-title {
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.tag.todo-tag {
+  background-color: #754cd520;
+  color: #754cd5;
+}
+
+.tag.completed-tag {
+  background-color: #10b98120;
+  color: #10b981;
+}
