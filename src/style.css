@@ -6,16 +6,18 @@
   --primary-dark: #754cd5;
   --bg: #f4f3fd;
   --text: #242433;
+  --text-muted: #69697b;
   --danger: #f43f5e;
 }
 
-.dark:root {
+.dark {
   color-scheme: dark;
 
   --primary: #a78bfa;
   --primary-dark: #8b5cf6;
   --bg: #242433;
   --text: #f4f3fd;
+  --text-muted: #95939f;
 }
 
 body {
@@ -90,7 +92,7 @@ body {
 
 .todos-list {
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .todo {
@@ -100,6 +102,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.todo:active {
+  background-color: red;
 }
 
 .dark .todo {
@@ -123,10 +129,20 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.todo-title::first-letter {
+  text-transform: uppercase;
+}
+
+.todo.completed .todo-title {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
 .tag {
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   cursor: pointer;
+  font-size: 0.875rem;
 }
 
 .tag.todo-tag {
